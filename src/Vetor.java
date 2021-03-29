@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 import javax.sound.sampled.SourceDataLine;
 
-public class Vetor {
+public class Vetor {    
     public static void main(String[] args) {
         String[] estados = new String[10];
         estados[0] = "AC";
