@@ -26,7 +26,7 @@ public class App {
 
         boolean encontrou = false;
         for (int i = 0; i < estados.length; i++) {
-            if (estados[i].equals(siglaBusca)) {
+            if (estados[i].equalsIgnoreCase(siglaBusca)) {
                 encontrou = true;
                 break;
             }
