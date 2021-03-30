@@ -22,6 +22,15 @@ public class Programa {
         System.out.println("Tamanho da lista depois de removido " + lista.getTamanho());
         System.out.println("primeiro elemento  " + lista.getPrimeiro().getValor());
         System.out.println("ultimo elemento  " + lista.getUltimo().getValor());
+
+        //REMOVENDO TODOS OS ELEMENTOS
+        lista.remover("DF");
+        lista.remover("CE");
+        lista.remover("BA");    
+        System.out.println("tamanho da lista depois de remover todos os elementos " + lista.getTamanho());
+
+        lista.adicionar("DF");
+        System.out.println("tamamho da lista depois de adicionar um elemento apenas " + lista.getTamanho());
           
         
 
