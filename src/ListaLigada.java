@@ -46,8 +46,29 @@ public class ListaLigada {
         
     }
 
-    public void remover(String valor) {
-
+    public void remover(String valorProcurado) {
+        ElementoNo atual = this.primeiro;
+        ElementoNo anterior = this.primeiro;
+        for (int i=0; i < this.tamanho; i++) {
+            if (atual.getValor().equals(valorProcurado)) {
+                if (this.tamanho == 1) { 
+                    this.ultimo = null;
+                    this.primeiro = null;
+                } else if (atual.equals(this.primeiro)) {
+                    this.primeiro  = atual.getProximo();
+                } else if (atual.equals(this.ultimo)) {
+                    this.ultimo =  anterior;
+                    this.ultimo.setProximo(null);
+                } else {
+                    anterior.setProximo(atual.getProximo());
+                    atual = null;
+                }
+                this.tamanho--;
+                break;
+            }
+            anterior = atual;
+            atual = atual.getProximo();
+        }
     }
 
     public ElementoNo get(int posicao) {

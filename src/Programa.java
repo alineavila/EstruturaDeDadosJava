@@ -6,11 +6,23 @@ public class Programa {
         lista.adicionar("DF");
         lista.adicionar("CE");
         lista.adicionar("BA");
+        //GET PRIMEIRO E ULTIMO ELEMENTOS 
         System.out.println("Primeiro Elemento " + lista.getPrimeiro());
         System.out.println("Ultimo Elemento " + lista.getUltimo());
-        System.out.println("Elemento na posicao 0 " + lista.get(0).getValor());
-        System.out.println("Elemento na posicao 1 " + lista.get(1).getValor());
-        System.out.println("Elemento na posicao 4 " + lista.get(4).getValor());
+        //PROCURAR ELEMENTOS NA POSIÇÃO EXATA
+        for (int i = 0; i < lista.getTamanho(); i++) {
+            System.out.println("Elemento na posicao " + i + " " + lista.get(i).getValor());
+        }
+        //REMOVER ELEMENTOS
+        System.out.println("REMOÇÃO");
+        lista.remover("AC");
+        for (int i = 0; i < lista.getTamanho(); i++) {
+            System.out.println("Elemento na posicao " + i + " " + lista.get(i).getValor());
+        }
+        System.out.println("Tamanho da lista depois de removido " + lista.getTamanho());
+        System.out.println("primeiro elemento  " + lista.getPrimeiro().getValor());
+        System.out.println("ultimo elemento  " + lista.getUltimo().getValor());
+          
         
 
     }
