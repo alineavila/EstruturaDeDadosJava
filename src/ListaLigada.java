@@ -1,27 +1,27 @@
 import java.util.PrimitiveIterator;
 
-public class ListaLigada {
-    private ElementoNo primeiro;
-    private ElementoNo ultimo;
+public class ListaLigada<T> {
+    private ElementoNo<T> primeiro;
+    private ElementoNo<T> ultimo;
     private int tamanho;
 
     public ListaLigada() {
         this.tamanho = 0;
     }
 
-    public ElementoNo getPrimeiro() {
+    public ElementoNo<T> getPrimeiro() {
         return this.primeiro;
     }
 
-    public void setPrimeiro(ElementoNo primeiro) {
+    public void setPrimeiro(ElementoNo<T> primeiro) {
         this.primeiro = primeiro;
     }
 
-    public ElementoNo getUltimo() {
+    public ElementoNo<T> getUltimo() {
         return this.ultimo;
     }
 
-    public void setUltimo(ElementoNo ultimo) {
+    public void setUltimo(ElementoNo<T> ultimo) {
         this.ultimo = ultimo;
     }
 
@@ -33,8 +33,8 @@ public class ListaLigada {
         this.tamanho = tamanho;
     }
 
-    public void adicionar(String novoValor) {
-        ElementoNo novoElemento = new ElementoNo(novoValor);
+    public void adicionar(T novoValor) {
+        ElementoNo<T> novoElemento = new ElementoNo<T>(novoValor);
         if (this.primeiro == null && this.ultimo == null) {
             this.primeiro = novoElemento;
             this.ultimo = novoElemento;
@@ -46,9 +46,9 @@ public class ListaLigada {
         
     }
 
-    public void remover(String valorProcurado) {
-        ElementoNo atual = this.primeiro;
-        ElementoNo anterior = this.primeiro;
+    public void remover(T valorProcurado) {
+        ElementoNo<T> atual = this.primeiro;
+        ElementoNo<T> anterior = this.primeiro;
         for (int i=0; i < this.tamanho; i++) {
             if (atual.getValor().equals(valorProcurado)) {
                 if (this.tamanho == 1) { 
@@ -71,13 +71,13 @@ public class ListaLigada {
         }
     }
 
-    public ElementoNo get(int posicao) {
-        ElementoNo atual = this.primeiro;
+    public ElementoNo<T> get(int posicao) {
+        ElementoNo<T> atual = this.primeiro;
         for (int i = 0; i < posicao; i++) {
             if (atual.getProximo() != null) {
                 atual = atual.getProximo();
             } else {
-                return new ElementoNo(null);
+                return new ElementoNo<T>(null);
             }
         }
         return atual;

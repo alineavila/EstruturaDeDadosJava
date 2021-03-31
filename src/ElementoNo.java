@@ -1,27 +1,27 @@
 import jdk.nashorn.internal.objects.annotations.Getter;
 
-public  class ElementoNo {
-    private String valor;
-    private ElementoNo proximo;
+public  class ElementoNo<T> {
+    private T valor;
+    private ElementoNo<T> proximo;
     
 
-    public ElementoNo(String valor){
+    public ElementoNo(T valor){
         this.valor = valor;
     }
-    public void setValor (String valor) {
+    public void setValor (T valor) {
         this.valor = valor;
     } 
 
-    public String getValor() {
+    public T getValor() {
         return valor;
     }
 
 
-    public void setProximo (ElementoNo no) {
+    public void setProximo (ElementoNo<T> no) {
         this.proximo = no;
     } 
 
-    public ElementoNo getProximo() {
+    public ElementoNo<T> getProximo() {
         return proximo;
     }
 

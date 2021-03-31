@@ -1,7 +1,7 @@
 public class Programa {
     
     public static void main(String[] args) {
-        ListaLigada lista = new ListaLigada();
+        ListaLigada<String> lista = new ListaLigada<String>();
         lista.adicionar("AC");
         lista.adicionar("DF");
         lista.adicionar("CE");
@@ -15,7 +15,7 @@ public class Programa {
         }
         //REMOVER ELEMENTOS
         System.out.println("REMOÇÃO");
-        lista.remover("AC");
+        lista.remover("CE");
         for (int i = 0; i < lista.getTamanho(); i++) {
             System.out.println("Elemento na posicao " + i + " " + lista.get(i).getValor());
         }
